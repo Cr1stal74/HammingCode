@@ -105,7 +105,7 @@ namespace HammingCoderVol2
                     mistakeIndex += failBits[i];
                 mistakeIndex--;
                 codedArray.Set(mistakeIndex, !codedArray[mistakeIndex]);
-                Console.WriteLine($"Ошибка в бите №{mistakeIndex}");
+                Console.WriteLine($"Wrong bit №{mistakeIndex}");
                 count = 0;
                 for (int i = 0; i < codedArray.Length; i++)
                 {
@@ -127,18 +127,18 @@ namespace HammingCoderVol2
             BitArray code;
             while (choice != "3")
             {
-                Console.Write("1. Закодировать сообщение\n2. Декодировать сообщение\n3. Выйти из программы\n");
+                Console.Write("1. Code the message\n2. Decode the message\n3. Close\n");
                 choice = Console.ReadLine();
                 switch (choice)
                 {
                     case "1":
-                        Console.Write("Введите сообщение: ");
+                        Console.Write("Input: ");
                         code = Code(Console.ReadLine());
                         for (int i = 0; i < code.Length; i++)
                             Console.Write(code[i] ? "1" : "0");
                         break;
                     case "2":
-                        Console.Write("Введите сообщение: ");
+                        Console.Write("Input: ");
                         code = Decode(Console.ReadLine());
                         for (int i = 0; i < code.Length; i++)
                             Console.Write(code[i] ? "1" : "0");
@@ -146,7 +146,7 @@ namespace HammingCoderVol2
                     case "3":
                         break;
                     default:
-                        Console.WriteLine("Неверное число");
+                        Console.WriteLine("Wrong number");
                         break;
                 }
                 Console.WriteLine();
